@@ -1,0 +1,25 @@
+{
+  "name": "jadepacker",
+  "version": "0.0.1",
+  "description": "jadepacker ==========",
+  "main": "index.js",
+  "bin": {
+    "jadepacker": "bin/jadepacker"
+  },
+  "dependencies": {
+    "jade": "*",
+    "coffee-script": "*",
+    "commander": "*"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/layerssss/jadepacker.git"
+  },
+  "author": "",
+  "license": "BSD",
+  "readmeFilename": "README.md",
+  "gitHead": "e30ba910fe58f60be415bb0017b8d199537b4f8a"
+}

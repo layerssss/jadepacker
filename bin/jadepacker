@@ -1,0 +1,7 @@
+#!/usr/bin/env node
+require("coffee-script")
+require('..').cli(require('commander')
+  .version(require('../package.json').version)
+  .usage('[options]')
+  .option('-o, --output <dir>', 'output')
+  .option('-i, --input <dir>', 'input').parse(process.argv));
