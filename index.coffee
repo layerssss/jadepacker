@@ -8,7 +8,6 @@ module.exports = jadepacker = (jades_path)->
   try
     jades = require jades_path
   catch e
-    console.error e
   render = (view, locals, cb)->
     view = view.substring 0, view.length - '.jade'.length if view.match /\.jade$/
     req = this.req
@@ -38,7 +37,11 @@ module.exports = jadepacker = (jades_path)->
 
   return result = 
     __express: (req, res, next)->
-      res.render = render
+      if process.env.NODE_ENV is 'production'
+        if jades?
+          res.render = render
+        else
+          console.error 'WARNING: jadepacker not loaded in production environment'
       next()
 
     expressRender: (res, view, locals, cb)->
